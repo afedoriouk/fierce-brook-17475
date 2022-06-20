@@ -6,6 +6,7 @@ const path = require("path");
 const uuid = require("uuid");
 const { DH_CHECK_P_NOT_SAFE_PRIME } = require("constants");
 
+const PORT = process.env.PORT || 3001;
 const app = express();
 app.listen(3001, () => {
     console.log(`API server now on port 3001!`);
@@ -45,6 +46,6 @@ app.get("notes", function(req,res) {
     res.sendFile(path.join(__dirname, "/public/notes.html"));
 });
 // APP listening on PORT
-app.listen(PORT, function (){
-    console.log("App listening on port:" + PORT);
-});
+app.listen(PORT, () => {
+    console.log(`API server now on port ${PORT}!`);
+  });
