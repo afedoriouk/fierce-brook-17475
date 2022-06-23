@@ -1,10 +1,9 @@
 const express = require('express');
-
 const fs = require("fs");
-const notes = require("/db/db.json");
+const notes = require("./db/db.json");
 const path = require("path");
-const uuid = require("uuid");
-const { DH_CHECK_P_NOT_SAFE_PRIME } = require("constants");
+const uuid = require("./helpers/uuid.js");
+// const { DH_CHECK_P_NOT_SAFE_PRIME } = require("constants");
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -29,23 +28,25 @@ app.post("/api/notes", (req, res) => {
     notes.push(newNotes);
     fs.writeFileSync("./db/db.json", JSON.stringify(notes));
     res.json(notes);
-    //Delete notes
-    app.delete("api/notes/:id", req, res) => {
+
+//Delete notes
+app.delete("api/notes/:id", (req, res) => {
         const notes = JSON.parse(fs.readFileSync("./db/db.json"));
         const deleteNote = notes.filter((removeNote) => removeNote.id !== req.params.id)
-    fs.writeFileSync("./db/db.json", JSON.stringify(deleteNote))};
+        fs.writeFileSync("./db/db.json", JSON.stringify(deleteNote))
+    });
     res.json(deleteNote);
 
 });
-//HTML calls for Hope page
-app.get("/", function (req,res) {
+//HTML calls for index page
+app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, "/public/index.html"));
 });
 //call notes
-app.get("notes", function(req,res) {
+app.get("notes", function (req, res) {
     res.sendFile(path.join(__dirname, "/public/notes.html"));
 });
 // APP listening on PORT
 app.listen(PORT, () => {
-    console.log(`API server now on port ${PORT}!`);
-  });
+    console.log(`API server now on port:${PORT}!`);
+});
