@@ -2,7 +2,7 @@ const express = require('express');
 const fs = require("fs");
 const notes = require("./db/db.json");
 const path = require("path");
-const uuid = require("./helpers/uuid.js");
+const { v4: uuidv4 } = require('uuid');
 // const { DH_CHECK_P_NOT_SAFE_PRIME } = require("constants");
 
 const PORT = process.env.PORT || 3001;
@@ -24,7 +24,7 @@ app.get("/api/notes", (req, res) => {
 app.post("/api/notes", (req, res) => {
     const notes = JSON.parse(fs.readFileSync("./db/db.json"));
     const newNotes = req.body;
-    newNotes.id = uuid.v4();
+    newNotes.id = uuidv4();
     notes.push(newNotes);
     fs.writeFileSync("./db/db.json", JSON.stringify(notes));
     res.json(notes);
