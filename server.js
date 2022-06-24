@@ -43,7 +43,7 @@ app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, "/public/index.html"));
 });
 //call notes
-app.get("notes", function (req, res) {
+app.get("/notes", function (req, res) {
     res.sendFile(path.join(__dirname, "/public/notes.html"));
 });
 // APP listening on PORT
