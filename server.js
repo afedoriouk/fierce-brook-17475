@@ -2,14 +2,12 @@ const express = require('express');
 const fs = require("fs");
 const notes = require("./db/db.json");
 const path = require("path");
+
+//universally unique identifier file (UUID)
 const { v4: uuidv4 } = require('uuid');
-// const { DH_CHECK_P_NOT_SAFE_PRIME } = require("constants");
 
 const PORT = process.env.PORT || 3001;
 const app = express();
-app.listen(3001, () => {
-    console.log(`API server now on port 3001!`);
-});
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
