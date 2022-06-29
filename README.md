@@ -7,13 +7,13 @@ APP URL<img width="936" alt="note taker app screenshot" src="https://user-images
 
 <img width="1079" alt="Heroku Dashboard Screenshot" src="https://user-images.githubusercontent.com/98120553/175753010-0a39993f-076e-4e06-9509-d992de6423a2.png">
 
-`https://fierce-brook-17475.herokuapp.com/`
+(https://fierce-brook-17475.herokuapp.com/)
 
 Your challenge is to create an application called Note Taker that can be used to write and save notes. This application will use an Express.js back end and will save and retrieve note data from a JSON file.
 
 The application’s front end has already been created. It's your job to build the back end, connect the two, and then deploy the entire application to Heroku.
 
-Before you start, clone [the starter code](https://github.com/coding-boot-camp/miniature-eureka).
+
 
 ## User Story
 
