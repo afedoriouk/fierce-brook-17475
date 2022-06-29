@@ -7,19 +7,14 @@ APP URL<img width="936" alt="note taker app screenshot" src="https://user-images
 
 <img width="1079" alt="Heroku Dashboard Screenshot" src="https://user-images.githubusercontent.com/98120553/175753010-0a39993f-076e-4e06-9509-d992de6423a2.png">
 
-(https://fierce-brook-17475.herokuapp.com/)
+[Heroku Deployment] (https://fierce-brook-17475.herokuapp.com/)
 
-Your challenge is to create an application called Note Taker that can be used to write and save notes. This application will use an Express.js back end and will save and retrieve note data from a JSON file.
-
-The application’s front end has already been created. It's your job to build the back end, connect the two, and then deploy the entire application to Heroku.
-
-
+This application is called Note Taker can be used to write and save notes. Note taker will be implementing Express.js back end and will save and retrieve note data from a JSON file. The application’s front end has already been created. The finnished application is deployed to Heroku.
 
 ## User Story
 
 ```
-AS A small business owner
-I WANT to be able to write and save notes
+A n small business owner I WANT to be able to write and save notes
 SO THAT I can organize my thoughts and keep track of tasks I need to complete
 ```
 
