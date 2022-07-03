@@ -22,7 +22,7 @@ APP URL<img width="936" alt="note taker app screenshot" src="https://user-images
 Many small business owners have to juggle multiple projects on a daily basis. 
 They are looking for the solution that would streamline the process of taking and retrieving the notes. 
 With this simple Note Taker app users would be able to write and save notes. 
-They can organize their thoughts and keep track of tasks that are needed to be completed.
+They can organize their thoughts and keep track of the tasks that are needed to be completed.
 ```
 
 ## Implementation
