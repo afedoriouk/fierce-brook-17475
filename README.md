@@ -1,13 +1,16 @@
 # 11 Express.js: Note Taker
 
 ## Your Task
+## Appearance and Functionality
+
+The following images show the web application's appearance and functionality: 
 <img width="937" alt="11-Express Project" src="https://user-images.githubusercontent.com/98120553/175752980-0424ce47-701a-443a-bea3-1952f1b3d1be.png">
 
 APP URL<img width="936" alt="note taker app screenshot" src="https://user-images.githubusercontent.com/98120553/175753001-3dc376bf-354b-4e1f-b868-279af4fbf380.png">
 
 <img width="1079" alt="Heroku Dashboard Screenshot" src="https://user-images.githubusercontent.com/98120553/175753010-0a39993f-076e-4e06-9509-d992de6423a2.png">
 
-[Heroku Deployment] (https://fierce-brook-17475.herokuapp.com/)
+
 
 This application is called Note Taker can be used to write and save notes. Note taker will be implementing Express.js back end and will save and retrieve note data from a JSON file. The application’s front end has already been created. The finnished application is deployed to Heroku.
 
@@ -36,13 +39,10 @@ WHEN I click on the Write icon in the navigation at the top of the page
 THEN I am presented with empty fields to enter a new note title and the note’s text in the right-hand column
 ```
 
-## Mock-Up
 
-The following images show the web application's appearance and functionality: 
 
-![Existing notes are listed in the left-hand column with empty fields on the right-hand side for the new note’s title and text.](./Assets/11-express-homework-demo-01.png)
 
-![Note titled “Balance accounts” reads, “Balance account books by end of day Monday,” with other notes listed on the left.](./Assets/11-express-homework-demo-02.png)
+
 
 ## Getting Started
 
@@ -70,7 +70,8 @@ You haven’t learned how to handle DELETE requests, but this application has th
 
 You are required to submit BOTH of the following for review:
 
-* The URL of the functional, deployed application.
+* The URL of the functional, deployed application to Heroku.
+* [Heroku Deployment] (https://fierce-brook-17475.herokuapp.com/)
 
 * The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
 
