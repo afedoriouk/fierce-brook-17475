@@ -1,9 +1,14 @@
 # Express.js Project - 11 
+
+
 ## Note Taker
 
 ## Appearance and Functionality
 
+
 The following images show the web application's appearance and functionality: 
+
+
 <img width="937" alt="11-Express Project" src="https://user-images.githubusercontent.com/98120553/175752980-0424ce47-701a-443a-bea3-1952f1b3d1be.png">
 
 APP URL<img width="936" alt="note taker app screenshot" src="https://user-images.githubusercontent.com/98120553/175753001-3dc376bf-354b-4e1f-b868-279af4fbf380.png">
