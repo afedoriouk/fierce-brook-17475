@@ -1,1 +1,7 @@
-[{"title":"Note Taker","text":"Take Notes"},{"title":"Note Taker","text":"Test 1","id":""}]
+{
+    "notes":
+    
+    [{"title":"Welcome to Note Taker","text":"Take Some Notes", "id":"0"},
+{"title":"Delete Notes","text":"Click the trash","id":"1"}]
+
+}
