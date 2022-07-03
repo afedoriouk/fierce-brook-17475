@@ -57,7 +57,7 @@ The HTML routes are created:
 - `GET /api/notes`read the `db.json` file and return saved notes as JSON.
 - `POST /api/notes`receive a new note and add it to the `db.json` file.
 
-## Review
+## Deployment
 
 - URL of the deployed application to Heroku:
 - Heroku Deployment (https://fierce-brook-17475.herokuapp.com/)
