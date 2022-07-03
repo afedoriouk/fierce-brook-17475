@@ -40,7 +40,7 @@ The new note that users entered is saved and appears in the left-hand column wit
 ## Technologies
 
 - `Node.js`
-- `Express.js
+- `Express.js`
 - `UUID`
 - `HTML`
 - `JavaScript`
@@ -60,7 +60,7 @@ The HTML routes are created:
 ## Review
 
 - URL of the deployed application to Heroku:
-- [Heroku Deployment] (https://fierce-brook-17475.herokuapp.com/)
+- Heroku Deployment (https://fierce-brook-17475.herokuapp.com/)
 
 - URL of the GitHub repository:
   https://github.com/afedoriouk/fierce-brook-17475
