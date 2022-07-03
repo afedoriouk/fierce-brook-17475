@@ -1,4 +1,4 @@
-# 11 Express.js Project 
+# Express.js Project - 11 
 ## Note Taker
 
 ## Appearance and Functionality
@@ -14,17 +14,21 @@ APP URL<img width="936" alt="note taker app screenshot" src="https://user-images
 
 ## User Story
 ```
-Many small business owners have to juggle multiple projects on a daily basis. They are looking for the solution that would streamline the process of taking and retrieving the notes. With this simple Note Taker app users would be able to write and save notes. They can organize their thoughts and keep track of tasks that are needed to be completed.
+Many small business owners have to juggle multiple projects on a daily basis. 
+They are looking for the solution that would streamline the process of taking and retrieving the notes. 
+With this simple Note Taker app users would be able to write and save notes. 
+They can organize their thoughts and keep track of tasks that are needed to be completed.
 ```
 
 ## Implementation
 
 ```
-This application is called Note Taker can be used to write and save notes. Note taker will be implementing Express.js back end and will save and retrieve note data from a JSON file. The application’s front end has already been created. The finnished application is deployed to Heroku.
+This application is called Note Taker can be used to write and save notes. 
+Note taker will be implementing Express.js back end and will save and retrieve note data from a JSON file. 
+The application’s front end has already been created. The finnished application is deployed to Heroku.
 
 When users opens the Note Taker - they are presented with a landing page with a link to a notes page. 
-By clicking on the link to the notes page
-users are presented with a page with existing notes listed in the left-hand column, plus empty fields to enter a new note title and the note’s text in the right-hand column.
+By clicking on the link to the notes page users are presented with a page with existing notes listed in the left-hand column.
 Users can enter a new note title and the note’s text and save the note with the Save icon in the navigation at the top of the page.
 The new note that users entered is saved and appears in the left-hand column with the other existing notes.
 
