@@ -15,13 +15,11 @@ APP URL<img width="936" alt="note taker app screenshot" src="https://user-images
 This application is called Note Taker can be used to write and save notes. Note taker will be implementing Express.js back end and will save and retrieve note data from a JSON file. The application’s front end has already been created. The finnished application is deployed to Heroku.
 
 ## User Story
-
 ```
-A n small business owner I WANT to be able to write and save notes
-SO THAT I can organize my thoughts and keep track of tasks I need to complete
+Many small business owners have to juggle multiple projects on a daily basis. They are looking for the solution that would streamline the process of taking and retrieving the notes. With this simple Note Taker app users would be able to write and save notes. They can organize their thoughts and keep track of tasks that are needed to be completed.
 ```
 
-## Acceptance Criteria
+## Implementation
 
 ```
 GIVEN a note-taking application
@@ -54,7 +52,7 @@ The API routes are created:
 
 ## Review
 
-* URL of the deployed application to Herok:
+* URL of the deployed application to Heroku:
 * [Heroku Deployment] (https://fierce-brook-17475.herokuapp.com/)
 
 * URL of the GitHub repository:
