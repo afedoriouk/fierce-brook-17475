@@ -1,6 +1,6 @@
-# 11 Express.js: Note Taker
+# 11 Express.js Project 
+## Note Taker
 
-## Your Task
 ## Appearance and Functionality
 
 The following images show the web application's appearance and functionality: 
@@ -12,8 +12,6 @@ APP URL<img width="936" alt="note taker app screenshot" src="https://user-images
 
 
 
-This application is called Note Taker can be used to write and save notes. Note taker will be implementing Express.js back end and will save and retrieve note data from a JSON file. The application’s front end has already been created. The finnished application is deployed to Heroku.
-
 ## User Story
 ```
 Many small business owners have to juggle multiple projects on a daily basis. They are looking for the solution that would streamline the process of taking and retrieving the notes. With this simple Note Taker app users would be able to write and save notes. They can organize their thoughts and keep track of tasks that are needed to be completed.
@@ -22,22 +20,15 @@ Many small business owners have to juggle multiple projects on a daily basis. Th
 ## Implementation
 
 ```
-GIVEN a note-taking application
-WHEN I open the Note Taker
-THEN I am presented with a landing page with a link to a notes page
-WHEN I click on the link to the notes page
-THEN I am presented with a page with existing notes listed in the left-hand column, plus empty fields to enter a new note title and the note’s text in the right-hand column
-WHEN I enter a new note title and the note’s text
-THEN a Save icon appears in the navigation at the top of the page
-WHEN I click on the Save icon
-THEN the new note I have entered is saved and appears in the left-hand column with the other existing notes
-WHEN I click on an existing note in the list in the left-hand column
-THEN that note appears in the right-hand column
-WHEN I click on the Write icon in the navigation at the top of the page
-THEN I am presented with empty fields to enter a new note title and the note’s text in the right-hand column
+This application is called Note Taker can be used to write and save notes. Note taker will be implementing Express.js back end and will save and retrieve note data from a JSON file. The application’s front end has already been created. The finnished application is deployed to Heroku.
+
+When users opens the Note Taker - they are presented with a landing page with a link to a notes page. 
+By clicking on the link to the notes page
+users are presented with a page with existing notes listed in the left-hand column, plus empty fields to enter a new note title and the note’s text in the right-hand column.
+Users can enter a new note title and the note’s text and save the note with the Save icon in the navigation at the top of the page.
+The new note that users entered is saved and appears in the left-hand column with the other existing notes.
+
 ```
-
-
 
 ## Functionality
 The application is connected to `db.json` file on the back end. It is used to store and retrieve the notes.
