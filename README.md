@@ -25,8 +25,8 @@ They can organize their thoughts and keep track of the tasks that are needed to 
 
 ```
 This application is called Note Taker and can be used to write and save notes.
-Express.js is a back end web application framework for Node.js.
-It is implemented as a back end application and will save and retrieve note data from a JSON file.
+Note Taker was developed using Express.js which is a back end web application framework for Node.js.
+Express.js is implemented in the Note Taker application and will save and retrieve note data from a JSON file.
 The application’s front end has already been created.
 The finnished application is deployed to Heroku.
 
