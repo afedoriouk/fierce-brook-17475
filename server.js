@@ -34,8 +34,8 @@ app.post("/api/notes", (req, res) => {
       (removeNote) => removeNote.id !== req.params.id
     );
     fs.writeFileSync("./db/db.json", JSON.stringify(deleteNote));
+    res.json(removeNote);
   });
-  res.json(removeNote);
 });
 //HTML calls for index page
 app.get("/", function (req, res) {
