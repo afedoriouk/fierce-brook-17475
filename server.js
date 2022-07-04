@@ -1,6 +1,6 @@
 const express = require("express");
 const fs = require("fs");
-const notes = require("./db/db.json");
+// const notes = require("./db/db.json");
 const path = require("path");
 
 //universally unique identifier file (UUID)

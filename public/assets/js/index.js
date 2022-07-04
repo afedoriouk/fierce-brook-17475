@@ -154,16 +154,16 @@ const renderNoteList = async (notes) => {
     return liEl;
   };
 
-  if (jsonNotes.notes.length === 0) {
+  if (jsonNotes.length === 0) {
     noteListItems.push(createLi("No saved Notes", false));
   }
+  console.log(jsonNotes);
 
-  await jsonNotes.notes.forEach((note) => {
+  await jsonNotes.forEach((note) => {
     const li = createLi(note.title);
     li.dataset.note = JSON.stringify(note);
 
     noteListItems.push(li);
-    console.log(noteListItems);
   });
 
   if (window.location.pathname === "/notes") {
