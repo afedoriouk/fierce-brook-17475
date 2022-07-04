@@ -15,7 +15,7 @@ app.use(express.static("public"));
 
 //API routes
 app.get("/api/notes", (req, res) => {
-  res.sendFile(path.join(__dirname, "/db/db.json"));
+  res.sendFile(path.join(__dirname, "./db/db.json"));
 });
 
 //Post to add new notes to the data base
