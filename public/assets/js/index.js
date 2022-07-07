@@ -39,7 +39,7 @@ const loadNotes = function () {
 };
 ///////////
 
-////save notes example ggogle search
+////save notes example //////
 
 const saveNotes = function (notes) {
   const dataJSON = JSON.stringify(notes);
@@ -48,7 +48,7 @@ const saveNotes = function (notes) {
 
 //
 
-// add notes example google search
+// add notes example //////
 const addNote = function (title, body) {
   const notes = loadNotes();
   notes.push({
