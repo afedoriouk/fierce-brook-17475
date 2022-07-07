@@ -1,16 +1,70 @@
-let noteTitle;
-let noteText;
-let saveNoteBtn;
-let newNoteBtn;
-let noteList;
+const $noteTitle = $("note-title");
+const $noteTextContainer = $(".note-text-container");
+const $saveNoteButton = $(".saveNoteButton");
+const $newNoteButton = $(".newNoteButton");
+const $noteList = $(".noteList .list-group");
 
-if (window.location.pathname === "/notes") {
-  noteTitle = document.querySelector(".note-title");
-  noteText = document.querySelector(".note-textarea");
-  saveNoteBtn = document.querySelector(".save-note");
-  newNoteBtn = document.querySelector(".new-note");
-  noteList = document.querySelectorAll(".list-container .list-group");
-}
+// activeNote is used to keep track of the note in the textarea
+
+let activeNote = {};
+
+//example
+// $("button").click(function () {
+//   $.getJSON("demo_ajax_json.js", function (result) {
+//     $.each(result, function (i, field) {
+//       $("div").append(field + " ");
+//     });
+//   });
+// });
+//
+
+//function to get all note from the Database
+const getNotes = function () {
+  return $.ajax({
+    url: "/api/notes",
+    method: "GET",
+    // headers: { "Content-Type": "application/json",
+  });
+};
+
+//load notes example google search
+const loadNotes = function () {
+  try {
+    const dataBuffer = fs.readFileSync("notes.json");
+    const dataJSON = dataBuffer.toString();
+    return JSON.parse(dataJSON);
+  } catch (e) {
+    return [];
+  }
+};
+///////////
+
+////save notes example ggogle search
+
+const saveNotes = function (notes) {
+  const dataJSON = JSON.stringify(notes);
+  fs.writeFileSync("notes.json", dataJSON);
+};
+
+//
+
+// add notes example google search
+const addNote = function (title, body) {
+  const notes = loadNotes();
+  notes.push({
+    title,
+    body,
+  });
+  saveNotes(notes);
+};
+
+// if (window.location.pathname === "/notes") {
+//   noteTitle = document.querySelector(".note-title");
+//   noteText = document.querySelector(".note-textarea");
+//   saveNoteBtn = document.querySelector(".save-note");
+//   newNoteBtn = document.querySelector(".new-note");
+//   noteList = document.querySelectorAll(".list-container .list-group");
+// }
 
 // Show an element
 const show = (elem) => {
@@ -21,17 +75,6 @@ const show = (elem) => {
 const hide = (elem) => {
   elem.style.display = "none";
 };
-
-// activeNote is used to keep track of the note in the textarea
-let activeNote = {};
-
-const getNotes = () =>
-  fetch("/api/notes", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
 
 const saveNote = (note) =>
   fetch("/api/notes", {
@@ -50,37 +93,39 @@ const deleteNote = (id) =>
     },
   });
 
-const renderActiveNote = () => {
-  hide(saveNoteBtn);
+//If the note is active - display the note. If note is not active - display empty input
+
+const renderActiveNote = function () {
+  $saveNoteBtn.hide();
 
   if (activeNote.id) {
-    noteTitle.setAttribute("readonly", true);
-    noteText.setAttribute("readonly", true);
-    noteTitle.value = activeNote.title;
-    noteText.value = activeNote.text;
+    $noteTitle.Attribute("readonly", true);
+    $noteText.Attribute("readonly", true);
+    $noteTitle.value(activeNote.title);
+    $noteText.value(activeNote.text);
   } else {
-    noteTitle.removeAttribute("readonly");
-    noteText.removeAttribute("readonly");
-    noteTitle.value = "";
-    noteText.value = "";
+    $noteTitle.Attribute("readonly", false);
+    $noteText.Attribute("readonly", false);
+    $noteTitle.value = "";
+    $noteText.value = "";
   }
 };
 
-const handleNoteSave = () => {
+const handleNoteSave = function () {
   const newNote = {
-    title: noteTitle.value,
-    text: noteText.value,
+    title: $noteTitle.value,
+    text: $noteText.value,
   };
-  saveNote(newNote).then(() => {
+  saveNote(newNote).then(function (data) {
     getAndRenderNotes();
     renderActiveNote();
   });
 };
 
 // Delete the clicked note
-const handleNoteDelete = (e) => {
+const handleNoteDelete = function (event) {
   // Prevents the click listener when the button is clicked
-  e.stopPropagation();
+  event.stopPropagation();
 
   const note = e.target;
   const noteId = JSON.parse(note.parentElement.getAttribute("data-note")).id;
