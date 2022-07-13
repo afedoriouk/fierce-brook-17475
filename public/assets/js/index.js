@@ -1,3 +1,6 @@
+
+//
+
 const $noteTitle = $("note-title");
 const $noteTextContainer = $(".note-text-container");
 const $saveNoteButton = $(".saveNoteButton");
@@ -8,15 +11,12 @@ const $noteList = $(".noteList .list-group");
 
 let activeNote = {};
 
-//example
-// $("button").click(function () {
-//   $.getJSON("demo_ajax_json.js", function (result) {
-//     $.each(result, function (i, field) {
-//       $("div").append(field + " ");
-//     });
-//   });
-// });
-//
+
+// $("").click(function () {
+// $.getJSON("demo_ajax_json.js", function (result) {
+// $.each(result, function (i, field) {
+// $("div").append(field + " ");
+
 
 //function to get all note from the Database
 const getNotes = function () {
@@ -27,19 +27,18 @@ const getNotes = function () {
   });
 };
 
-//load notes example google search
+//load notes on the page
 const loadNotes = function () {
   try {
-    const dataBuffer = fs.readFileSync("notes.json");
-    const dataJSON = dataBuffer.toString();
+    const dataBuffer =  fs.readFileSync("notes.json");
+    const dataJSON = dataBuffer.stringify();
     return JSON.parse(dataJSON);
   } catch (e) {
     return [];
   }
 };
-///////////
 
-////save notes example //////
+//save notes 
 
 const saveNotes = function (notes) {
   const dataJSON = JSON.stringify(notes);
@@ -93,7 +92,8 @@ const deleteNote = (id) =>
     },
   });
 
-//If the note is active - display the note. If note is not active - display empty input
+//If the note is active - display the note. 
+//If note is not active - display empty container
 
 const renderActiveNote = function () {
   $saveNoteBtn.hide();
@@ -124,8 +124,8 @@ const handleNoteSave = function () {
 };
 
 // Delete the clicked note
-const handleNoteDelete = function (event) {
-  // Prevents the click listener when the button is clicked
+const handleNoteDelete = function (event) {   // Prevents the click listener when the button is clicked
+  
   event.stopPropagation();
 
   const note = $(this).data().parent(".list-group-item");
@@ -163,27 +163,33 @@ const handleDisplaySaveBtn = () => {
   }
 };
 
+
+
+// Returns HTML element with or without a delete button
 // Render the list of note titles
-const renderNoteListItems = function (notes) {
+
+const displayNoteListItems = function (notes) {
   $noteList.empty();
 
-  const noteListItems = [];
+  let noteListItems = [];
+for (let i=0; i< notes.length; i++){
+  const note = notes[i];
+  const $li = ('list-group-item').data(note);
+  const $deleteButton =('delete-note');
+
+  $li.append($span, $deleteButton);
+noteListItems.push($li)
+}
+
+  // if (window.location.pathname === "/notes") {
+  //   noteList.forEach((element) => (element.innerHTML = ""));
+  // }
+  // const displayNoteList = function(notes){
+  //   $noteList.empty();
+  // }
 
 
-  if (window.location.pathname === "/notes") {
-    noteList.forEach((element) => (element.innerHTML = ""));
-  }
 
-  
-
-
-
-//Needs update <--
-  // Returns HTML element with or without a delete button
-  const displayNoteList = function(notes){
-    $noteList.empty();
-  }
-  
   const createLi = (text, delBtn = true) => {
     const liEl = document.createElement("li");
     liEl.classList.add("list-group-item");
@@ -215,14 +221,14 @@ const renderNoteListItems = function (notes) {
     const li = createLi(note.title);
     li.dataset.note = JSON.stringify(note);
 
-    noteListItems.push(li);
+    $noteListItems.push(noteListItems);
   });
 
   if (window.location.pathname === "/notes") {
     noteListItems.forEach((note) => noteList[0].append(note));
   }
 };
-//end need update -->
+//
 
 
 // Gets notes from the db and renders them to the sidebar

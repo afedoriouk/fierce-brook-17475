@@ -24,8 +24,8 @@ app.get("/api/notes", (req, res) => {
 
 //Post to add new notes to the database //Creating POST route
 //Using input from json file to push new note to the database
-
-import { readFileSync } from "fs";
+const { error } = require("console");
+// import { readFileSync } from "fs";
 
 app.post("/api/notes", function (req, res) {
   res.send();
@@ -69,15 +69,33 @@ app.post("/api/notes", function (req, res) {
   res.json(notes);
 });
 
-//   Delete notes
+// Delete notes with DELETE method //Delete the note form the database usig ID
 
-app.delete("api/notes/:id", (req, res) => {
-  const notes = JSON.parse(fs.readFileSync("./db/db.json"));
-  const deleteNote = notes.filter(
-    (removeNote) => removeNote.id !== req.params.id
-  );
-  fs.writeFileSync("./db/db.json", JSON.stringify(deleteNote));
-  res.json(removeNote);
+app.delete("api/notes/:id", function (req, res) {
+  const deleteID = req.params.id;
+  fs.readFile("./db/db.json", "utf8", function (err) {
+    if (err) {
+      console.log(err);
+    }
+    const content = JSON.stringify(output);
+    if ((deleteID) => notes.length) {
+      res.json(notes.splice(deleteID));
+      let notes = [];
+
+      for (let i = 0; i < notes.length; i++)
+        notes[i].id === 0
+          ? { indexes, [0]: i }
+          : fs.readFileSync(
+              "./db/db.json",
+              JSON.stringify(output, null),
+              function (err) {
+                if (err) console.log(err);
+              }
+            );
+    } else {
+      res.json(false);
+    }
+  });
 });
 
 //HTML call routing user to the  index page //GET routes
@@ -89,6 +107,12 @@ app.get("/", function (req, res) {
 app.get("/notes", function (req, res) {
   res.sendFile(path.join(__dirname, "/public/notes.html"));
 });
+
+//GET routes using database JSON file
+app.get("/notes", function (req, res) {
+  res.sendFile(path.join(__dirname, "./db/db.json"));
+});
+
 // APP listening on PORT
 app.listen(PORT, () => {
   console.log(`API server now on port:${PORT}!`);
