@@ -24,20 +24,20 @@ app.get("/api/notes", (req, res) => {
 
 //Post to add new notes to the database //Creating POST route
 //Using input from json file to push new note to the database
-const { error } = require("console");
+// const { error } = require("console");
 // import { readFileSync } from "fs";
 
 app.post("/api/notes", function (req, res) {
   res.send();
 });
-const content = JSON.stringify(output);
+const content = JSON.stringify(notes);
 fs.readFileSync("./db/db.json", content, "utf8", function (err) {
   if (err) {
     return console.log(err);
   }
   console.log(err);
 });
-const notes = JSON.stringify(output);
+const notes = JSON.stringify(notes);
 const newNoteID = notes.lenght + 1;
 const newNote = {
   text: noteRequest.text,
@@ -72,12 +72,13 @@ app.post("/api/notes", function (req, res) {
 // Delete notes with DELETE method //Delete the note form the database usig ID
 
 app.delete("api/notes/:id", function (req, res) {
+  
   const deleteID = req.params.id;
   fs.readFile("./db/db.json", "utf8", function (err) {
     if (err) {
       console.log(err);
     }
-    const content = JSON.stringify(output);
+    const content = JSON.stringify(notes);
     if ((deleteID) => notes.length) {
       res.json(notes.splice(deleteID));
       let notes = [];
@@ -87,7 +88,7 @@ app.delete("api/notes/:id", function (req, res) {
           ? { indexes, [0]: i }
           : fs.readFileSync(
               "./db/db.json",
-              JSON.stringify(output, null),
+              JSON.stringify(notes, null),
               function (err) {
                 if (err) console.log(err);
               }
