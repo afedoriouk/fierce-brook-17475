@@ -52,14 +52,14 @@ fs.writeFile("./db/db.json", content, "utf8", function (err) {
   }
 });
 
-//Post to add new notes to the data base
+//Post method to add new notes to the data base
 app.post("/api/notes", function (req, res) {
   res.send();
   const content = JSON.stringify(output);
 
-  fs.readFileSync("./db/db.json", content, "utf8", function (err) {
+  fs.readFileSync("./db/db.json", function (err) {
     if (err) {
-      return console.log(err);
+      return console.log("New Note");
     }
   });
   const newNotes = req.body;
