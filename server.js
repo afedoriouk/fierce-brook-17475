@@ -74,7 +74,7 @@ app.post("/api/notes", function (req, res) {
 app.delete("api/notes/:id", function (req, res) {
   
   const deleteID = req.params.id;
-  fs.readFile("./db/db.json", "utf8", function (err) {
+  fs.readFile("./db/db.json", function (err) {
     if (err) {
       console.log(err);
     }
