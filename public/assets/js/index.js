@@ -188,12 +188,6 @@ for (let i=0; i< notes.length; i++){
 noteListItems.push($li)
 }
 
-  // if (window.location.pathname === "/notes") {
-  //   noteList.forEach((element) => (element.innerHTML = ""));
-  // }
-  // const displayNoteList = function(notes){
-  //   $noteList.empty();
-  // }
   
 };
 //
@@ -216,4 +210,4 @@ if (window.location.pathname === "/notes") {
 };
 
 getAndDisplayNotes();
-module.exports = {getNotes, addNote, saveNote, deleteNote}
+module.exports = {getNotes:getNotes, addNote:addNote, saveNote:saveNote, deleteNote:deleteNote}
