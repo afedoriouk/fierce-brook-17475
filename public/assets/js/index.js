@@ -21,11 +21,11 @@ let activeNote = {};
 
 
 //function to get all note from the Database
-const getNotes = function () {
-  return $.ajax({
+const getNotes = function (title,body) {
+  return ({
     url: "/notes",
     method: "GET",
-    // headers: { "Content-Type": "application/json",
+    
   });
 };
 
@@ -47,21 +47,26 @@ const saveNotes = function (note) {
   fs.writeFileSync("notes.json", dataJSON);
 };
 
-//
 
-// add notes example //////
+// add notes //
 const addNote = function (title, body) {
   const notes = loadNotes();
+  const duplicateNotes=notes.filter(function(note){
+    return note.title === title
+  })
+  if(duplicateNotes.lenght===0)
   notes.push({
-    title,
-    body,
+    title:title,
+    body:body,
   });
   saveNotes(notes);
+  console.log("New Note")
+
 };
 
 if (window.location.pathname === "/notes") {
   noteTitle = document.querySelector(".note-title");
-  noteText = document.querySelector(".note-textarea");
+  noteTextContainer = document.querySelector(".note-textarea");
   saveNoteButton = document.querySelector(".save-note");
   newNoteButton = document.querySelector(".new-note");
   noteList = document.querySelectorAll(".list-container .list-group");
@@ -114,7 +119,7 @@ const renderActiveNote = function () {
 };
 
 //Save the note to the Database after getting and rendering the note
-const handleNoteSave = function () {
+const handleNoteSave = function (notes) {
   const newNote = {
     title: $noteTitle.value(),
     text: $noteText.value(),
