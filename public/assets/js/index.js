@@ -43,7 +43,7 @@ const loadNotes = function () {
 //save notes 
 
 const saveNotes = function (note) {
-  const dataJSON = JSON.stringify(note);
+  const dataJSON = JSON.stringify(notes);
   fs.writeFileSync("notes.json", dataJSON);
 };
 
@@ -164,7 +164,7 @@ const handleNewNoteView = function () {
 //Hide save button if text containe empty // show save button if text is in the container
 const handleDisplaySaveBtn = () => {
   if (!noteTitle.value.trim() || !noteText.value.trim()) {
-    hide(saveNoteBtn);
+    hide(saveNoteButton);
   } else {
     show($saveNoteButton);
   }
@@ -216,3 +216,4 @@ if (window.location.pathname === "/notes") {
 };
 
 getAndDisplayNotes();
+module.exports = {getNotes, addNote, saveNote, deleteNote}
