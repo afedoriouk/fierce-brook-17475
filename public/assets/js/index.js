@@ -65,11 +65,11 @@ const addNote = function (title, body) {
 };
 
 if (window.location.pathname === "/notes") {
-  noteTitle = document.querySelector(".note-title");
-  noteTextContainer = document.querySelector(".note-textarea");
-  saveNoteButton = document.querySelector(".save-note");
-  newNoteButton = document.querySelector(".new-note");
-  noteList = document.querySelectorAll(".list-container .list-group");
+  $noteTitle = document.querySelector(".note-title");
+  $noteTextContainer = document.querySelector(".note-textarea");
+  $saveNoteButton = document.querySelector(".save-note");
+  $newNoteButton = document.querySelector(".new-note");
+  $noteList = document.querySelectorAll(".list-container .list-group");
 }
 
 // Show an element
