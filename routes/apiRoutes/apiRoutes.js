@@ -3,23 +3,23 @@ const router = reqire('expres').Router();
 const notesRouters = require('./notesRouters');
 const fs = require('fs');
 
-const db = require('../../db/db.json')
+const db = require('../../db/db.json');
+const { json } = require('express');
 
 //router use function
 router.use(notesRouters);
 
 
-
-//Post to add new notes to the database //Creating POST route
 //Using input from json file to push new note to the database
 // const { error } = require("console");
 // import { readFileSync } from "fs";
 
-app.post("/api/notes", function (req, res) {
-    res.send();
+//Post to add new notes to the database //Creating POST route
+router.post("/notes", function (req, res) {
+    console.log(res.body);
   });
   const content = JSON.stringify(notes);
-  fs.readFileSync("./db/db.json", content, "utf8", function (err) {
+  fs.readFileSync("./db/db.json", content, function (err) {
     if (err) {
       return console.log(err);
     }
@@ -34,15 +34,15 @@ app.post("/api/notes", function (req, res) {
   };
   notes.push(newNote);
   res.json(newNote);
-  fs.writeFile("./db/db.json", content, "utf8", function (err) {
+  fs.writeFile("./db/db.json", content, function (err) {
     if (err) {
       return console.log(err);
     }
   });
   
   //Post method to add new notes to the data base
-  app.post("/api/notes", function (req, res) {
-    res.send();
+  router.post("/notes", function (req, res) {
+    console.log(req.body);
     const content = JSON.stringify(output);
   
     fs.readFileSync("./db/db.json", function (err) {

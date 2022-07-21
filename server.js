@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //Creating API routes //GET routes method
-app.get("/api/notes", (req, res) => {
+app.get("/notes", (req, res) => {
   res.sendFile(path.join(__dirname, "./db/db.json"));
 });
 
