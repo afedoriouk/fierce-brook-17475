@@ -14,8 +14,8 @@ const noteList = (".noteList .list-group");
 let activeNote = {};
 
 
-// ("").click(function () {
-// .getJSON("demo_ajax_json.js", function (result) {
+// .click(function () {
+// .getJSON("ajax_json.js", function (result) {
 // .each(result, function (i, field) {
 // ("div").append(field + " ");
 
@@ -23,7 +23,7 @@ let activeNote = {};
 //function to get all note from the Database
 const getNotes = function () {
   return $.ajax({
-    url: "/api/notes",
+    url: "/notes",
     method: "GET",
     // headers: { "Content-Type": "application/json",
   });
