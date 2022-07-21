@@ -210,4 +210,4 @@ if (window.location.pathname === "/notes") {
 };
 
 getAndDisplayNotes();
-module.exports = {getNotes:getNotes, addNote:addNote, saveNote:saveNote, deleteNote:deleteNote}
+// module.exports = {getNotes:getNotes, addNote:addNote, saveNote:saveNote, deleteNote:deleteNote}
