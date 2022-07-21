@@ -34,9 +34,9 @@ app.get("/notes", function (req, res) {
 });
 
 //GET routes using database JSON file
-app.get("/notes", function (req, res) {
-  res.sendFile(path.join(__dirname, "./db/db.json"));
-});
+// app.get("/notes", function (req, res) {
+//   res.sendFile(path.join(__dirname, "./db/db.json"));
+// });
 
 // APP listening on PORT
 app.listen(PORT, () => {
