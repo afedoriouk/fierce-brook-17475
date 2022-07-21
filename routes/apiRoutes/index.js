@@ -1,13 +1,13 @@
 //router parameters Express.js express.Router()
 const router = reqire('expres').Router();
 const notesRouters = require('./notesRouters');
+const fs = require('fs');
+
+const db = require('../../db/db.json')
+
 //router use function
 router.use(notesRouters);
 
-//module.exports = router
-module.exports = router;
-
-//express -npm install express
 
 
 //Post to add new notes to the database //Creating POST route
@@ -86,4 +86,7 @@ app.post("/api/notes", function (req, res) {
       }
     });
   });
-  module.exports=router;
+
+
+  //module.exports = router
+module.exports = router;

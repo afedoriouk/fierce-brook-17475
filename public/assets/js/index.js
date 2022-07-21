@@ -1,21 +1,23 @@
 
 //
 
-const $noteTitle = $("note-title");
-const $noteTextContainer = $(".note-text-container");
-const $saveNoteButton = $(".saveNoteButton");
-const $newNoteButton = $(".newNoteButton");
-const $noteList = $(".noteList .list-group");
+const { json } = require("express");
+
+const noteTitle = ("note-title");
+const noteTextContainer = (".note-text-container");
+const saveNoteButton = (".saveNoteButton");
+const newNoteButton = (".newNoteButton");
+const noteList = (".noteList .list-group");
 
 // activeNote is used to keep track of the note in the textarea
 
 let activeNote = {};
 
 
-// $("").click(function () {
-// $.getJSON("demo_ajax_json.js", function (result) {
-// $.each(result, function (i, field) {
-// $("div").append(field + " ");
+// ("").click(function () {
+// .getJSON("demo_ajax_json.js", function (result) {
+// .each(result, function (i, field) {
+// ("div").append(field + " ");
 
 
 //function to get all note from the Database
@@ -40,8 +42,8 @@ const loadNotes = function () {
 
 //save notes 
 
-const saveNotes = function (notes) {
-  const dataJSON = JSON.stringify(notes);
+const saveNotes = function (note) {
+  const dataJSON = JSON.stringify(note);
   fs.writeFileSync("notes.json", dataJSON);
 };
 
@@ -143,7 +145,7 @@ const handleNoteDelete = function (event) {   // Prevents the click listener whe
 // Sets the current Note and displays it
 const handleCurrentNoteView = function () {
   currentNote = {};
-
+activeNote = json.parse(element.target.parentElement.getAttribute)
   displayCurrentNote();
 };
 
@@ -157,9 +159,9 @@ const handleNewNoteView = function () {
 //Hide save button if text containe empty // show save button if text is in the container
 const handleDisplaySaveBtn = () => {
   if (!noteTitle.value.trim() || !noteText.value.trim()) {
-    $saveNoteBtn.hide();
+    hide(saveNoteBtn);
   } else {
-    $saveNoteButton.show();
+    show($saveNoteButton);
   }
 };
 
